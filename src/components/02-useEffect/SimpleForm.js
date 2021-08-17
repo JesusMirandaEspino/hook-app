@@ -1,5 +1,7 @@
-import React, { useEffect, useState }from 'react';
+import React, { useEffect, useState } from 'react';
+import { Message } from './Message';
 import './effects.css';
+
 
 export const SimpleForm = () => {
 
@@ -12,15 +14,15 @@ export const SimpleForm = () => {
 
 
     useEffect( () => {
-        console.log( 'hey' );
+        //  de prueba console.log( 'hey' );
     }, [] );
 
     useEffect( () => {
-        console.log( 'form' );
+        //  de prueba console.log( 'form' );
     }, [formState] );
 
     useEffect( () => {
-        console.log( 'email' );
+        // de prueba console.log( 'email' );
     }, [email] );
 
 
@@ -59,6 +61,9 @@ export const SimpleForm = () => {
                     onChange={ handleInpuntChange }
                 />
             </div>
+
+
+            { (name  === '123') && <Message /> }
 
         </>
     )
