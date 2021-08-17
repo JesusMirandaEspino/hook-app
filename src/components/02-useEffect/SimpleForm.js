@@ -13,14 +13,22 @@ export const SimpleForm = () => {
 
     useEffect( () => {
         console.log( 'hey' );
-    } );
+    }, [] );
+
+    useEffect( () => {
+        console.log( 'form' );
+    }, [formState] );
+
+    useEffect( () => {
+        console.log( 'email' );
+    }, [email] );
 
 
     const handleInpuntChange = ({ target }) => {
 
         setFormState({
             ...formState,
-            [ target.name ]: target.value
+            [ target.name ]: target.value,
         });
 
     };
@@ -40,6 +48,18 @@ export const SimpleForm = () => {
                     onChange={ handleInpuntChange }
                 />
             </div>
+
+            <div  className="form-group"> 
+                <label for="email" className="form-control"  >Tu email</label>
+                <input 
+                    type="text"
+                    name="email"
+                    className="form-control"
+                    value={ email }
+                    onChange={ handleInpuntChange }
+                />
+            </div>
+
         </>
     )
 }
