@@ -6,17 +6,16 @@ import ReactDOM from 'react-dom';
 //  practicas import { SimpleForm } from './components/02-useEffect/SimpleForm';
 //  practicas importimport { FormWithCustomHook } from './components/02-useEffect/FormWithCustomHook.js'
 //  practicas importimport { MultipleCustomHooks } from './components/03-examples/MultipleCustomHooks';
-
 // practica import { FocusScreen } from './components/04-useFocus/FocusScreen';
+// ptractica import { RealExampleRef } from './components/04-useFocus/RealExampleRef';
 
-import { RealExampleRef } from './components/04-useFocus/RealExampleRef';
-
+import { Layout } from './components/05-useLayoutEffect/Layout';
 
 
 
 ReactDOM.render(
 
-    <RealExampleRef />,
+    <Layout />,
   document.getElementById('root')
 );
 
