@@ -1,10 +1,13 @@
 import React from 'react'
 import '../../components/02-useEffect/effects.css';
 import {  Usefetch } from '../../Hooks/Usefetch';
+import { useCounter } from '../../Hooks/UseCounter';
 
 export const MultipleCustomHooks = () => {
 
-    const { loading, data } =  Usefetch( 'https://www.breakingbadapi.com/api/quotes/1' );
+    const { counter, increment } = useCounter(1);
+
+    const { loading, data } =  Usefetch( `https://www.breakingbadapi.com/api/quotes/${counter}` );
     const { author, quote } = !!data && data[0];
 
 
@@ -30,6 +33,10 @@ export const MultipleCustomHooks = () => {
                     </blockquote>
                 )
             }
+
+            <button className="btn btn-primary mt-5" onClick={ increment } > Siguiente Frase </button>
+
+
         </div>
 
     )
