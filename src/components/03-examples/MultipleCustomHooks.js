@@ -3,7 +3,7 @@ import '../../components/02-useEffect/effects.css';
 import {  Usefetch } from '../../Hooks/Usefetch';
 import { useCounter } from '../../Hooks/UseCounter';
 
-export const MultipleCustomHooks = () => {
+export const  MultipleCustomHooks = () => {
 
     const { counter, increment } = useCounter(1);
 

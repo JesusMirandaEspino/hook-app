@@ -7,12 +7,16 @@ import ReactDOM from 'react-dom';
 //  practicas importimport { FormWithCustomHook } from './components/02-useEffect/FormWithCustomHook.js'
 //  practicas importimport { MultipleCustomHooks } from './components/03-examples/MultipleCustomHooks';
 
-import { FocusScreen } from './components/04-useFocus/FocusScreen';
+// practica import { FocusScreen } from './components/04-useFocus/FocusScreen';
+
+import { RealExampleRef } from './components/04-useFocus/RealExampleRef';
+
+
 
 
 ReactDOM.render(
 
-    <FocusScreen />,
+    <RealExampleRef />,
   document.getElementById('root')
 );
 
