@@ -13,15 +13,18 @@ import ReactDOM from 'react-dom';
 
 // practica import { Memorize } from './components/06-memo/Memorize';
 
-//patractica import { MemoHook} from './components/06-memo/MemoHook';
+//practica import { MemoHook} from './components/06-memo/MemoHook';
 
 
-import { CallbackHooks } from './components/06-memo/CallbackHooks';
+// practica import { CallbackHooks } from './components/06-memo/CallbackHooks';
+
+
+import { Padre } from './components/07-tarea-memo/Padre';
 
 
 ReactDOM.render(
 
-    <CallbackHooks  />,
+    <Padre  />,
   document.getElementById('root')
 );
 

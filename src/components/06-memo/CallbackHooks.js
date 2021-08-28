@@ -1,4 +1,4 @@
-import React, {  useState, useCallback } from 'react';
+import React, {  useState, useCallback, useEffect } from 'react';
 import '../02-useEffect/effects.css';
 import { ShowIncrement } from './ShowIncrement';
 
@@ -12,9 +12,15 @@ export const CallbackHooks = () => {
     }*/
 
 
+
     const increment = useCallback( (num) => {
         setCounter( c => c + num );
     }, [ setCounter ] );
+
+
+    useEffect( () => { 
+        
+    }, [ increment ]);
 
     return (
         <div>
