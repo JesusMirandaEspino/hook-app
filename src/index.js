@@ -19,12 +19,14 @@ import ReactDOM from 'react-dom';
 // practica import { CallbackHooks } from './components/06-memo/CallbackHooks';
 
 
-import { Padre } from './components/07-tarea-memo/Padre';
+// practica import { Padre } from './components/07-tarea-memo/Padre';
+
+import { TodoApp } from './components/08-useReducer/TodoApp.js';
 
 
 ReactDOM.render(
 
-    <Padre  />,
+    <TodoApp />,
   document.getElementById('root')
 );
 
