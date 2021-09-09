@@ -12,23 +12,23 @@ export const TodoApp = () => {
     }];
 
 
-    const [  todo ] = useReducer( TodoReducer, initialState  );
+    const [  todos ] = useReducer( TodoReducer, initialState  );
 
-
-    
+    console.log( todos );
 
     return (
         <div>
-            <h1>Todo App</h1>
+            <h1>Todo App  ( { todos.length  }  ) </h1>
             <hr/>
 
-            <ul>
-
-                <li>Hola</li>
-                <li>Mundo</li>
-                <li>Como</li>
-                <li>Estan</li>
-
+            <ul className="list-group list-group-flush" >
+                { 
+                
+                    todos.map( (todo, i) => (
+                            <li key={ todo.id }  className="list-group-item" > <p className="text-center"  >  { i + 1 } .- {  todo.desc } </p>   </li>
+                    ))
+                
+                }
             </ul>
 
         </div>
