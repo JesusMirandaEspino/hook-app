@@ -21,11 +21,29 @@ export const TodoApp = () => {
             <h1>Todo App  ( { todos.length  }  ) </h1>
             <hr/>
 
+
+            <form>
+
+                <label for="description" > Ingresa un elemento </label> 
+                <input type="text"  name="description"   />
+
+                <button className="btn btn-primary mt-1" >Agregar</button>
+
+            </form>
+
+
+            <hr/>
+
             <ul className="list-group list-group-flush" >
                 { 
                 
                     todos.map( (todo, i) => (
-                            <li key={ todo.id }  className="list-group-item" > <p className="text-center"  >  { i + 1 } .- {  todo.desc } </p>   </li>
+                            <li key={ todo.id }  className="list-group-item" > <p className="text-center"  >  { i + 1 } .- {  todo.desc } </p>  
+                            
+                            <button className="btn btn-danger" >Borrar</button>
+
+                            </li>
+
                     ))
                 
                 }
