@@ -19,13 +19,13 @@ export const TodoApp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newTodo = { 
+        const newTodo = {
             id: new Date().getTime(),
             desc: 'Nueva Tarea',
             done: false
         };
 
-        const action = { 
+        const action = {
             type: 'add',
             payload: newTodo
         }
