@@ -1,27 +1,41 @@
 import React, { useReducer } from 'react';
 import { TodoReducer } from './TodoReducer'
 import './styles.css';
+import { UseForm } from '../../Hooks/UseForm';
+
+
+
+    const init = () => {
+        return [{
+            id: new Date().getTime(),
+            desc: 'Aprender React',
+            done: false
+        }];
+    };
+
 
 export const TodoApp = () => {
 
-    const initialState = [{
 
-        id: new Date().getTime(),
-        desc: 'Aprender React',
-        done: false
-    }];
+    const [  todos, dispatch ] = useReducer( TodoReducer, [], init  );
 
 
-    const [  todos, dispatch ] = useReducer( TodoReducer, initialState  );
+    const [  { description } , handleInpuntChange, reset ]  = UseForm( {
+        description: ''
+    } );
 
-    console.log( todos );
+    console.log(  description );
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        if( description.trim() <= 1 ){
+            return;
+        }
+
         const newTodo = {
             id: new Date().getTime(),
-            desc: 'Nueva Tarea',
+            desc: description,
             done: false
         };
 
@@ -31,7 +45,7 @@ export const TodoApp = () => {
         }
 
         dispatch( action );
-
+        reset();
     }
 
     return (
@@ -43,7 +57,7 @@ export const TodoApp = () => {
             <form  onSubmit={ handleSubmit } >
 
                 <label for="description" > Ingresa un elemento </label> 
-                <input type="text"  name="description"   />
+                <input type="text"  name="description" onChange={ handleInpuntChange }  value={ description }  />
 
                 <button type="submit" className="btn btn-primary mt-1" >Agregar</button>
 

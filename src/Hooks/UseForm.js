@@ -4,6 +4,11 @@ export const UseForm = ( initialState = {  }  ) => {
 
 const [ values, setValues ] = useState( initialState );
 
+const reset = () => {
+
+    setValues( initialState );
+
+}
 
     const handleInpuntChange = ({ target }) => {
 
@@ -14,7 +19,7 @@ const [ values, setValues ] = useState( initialState );
 
     };
 
-    return [ values,  handleInpuntChange ];
+    return [ values,  handleInpuntChange, reset ];
 
 
 }
