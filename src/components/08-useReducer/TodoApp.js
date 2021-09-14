@@ -31,7 +31,17 @@ export const TodoApp = () => {
     }, [todos]);
 
 
+    const HandleDelete = ( todoId ) => {
+        console.log(  todoId );
 
+        const action = {
+            type: 'delete',
+            payload: todoId
+        }
+
+        dispatch( action );
+
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -79,7 +89,7 @@ export const TodoApp = () => {
                     todos.map( (todo, i) => (
                             <li key={ todo.id }  className="list-group-item" > <p className="text-center"  >  { i + 1 } .- {  todo.desc } </p>  
                             
-                            <button className="btn btn-danger" >Borrar</button>
+                            <button className="btn btn-danger" onClick={ () => HandleDelete(todo.id) }    >Borrar</button>
 
                             </li>
 
