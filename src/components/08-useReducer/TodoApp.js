@@ -1,9 +1,8 @@
 import React, { useReducer, useEffect } from 'react';
 import { TodoReducer } from './TodoReducer'
 import './styles.css';
-import { UseForm } from '../../Hooks/UseForm';
 import { TodoList } from './TodoList';
-
+import { TodoAdd } from './TodoAdd';
 
     const init = () => {
         return JSON.parse( localStorage.getItem( 'todos' ) )  ||  [] ;
@@ -15,13 +14,6 @@ export const TodoApp = () => {
 
 
     const [  todos, dispatch ] = useReducer( TodoReducer, [], init  );
-
-
-    const [  { description } , handleInpuntChange, reset ]  = UseForm( {
-        description: ''
-    } );
-
-
 
 
     useEffect( () => {
@@ -52,18 +44,10 @@ export const TodoApp = () => {
         } );
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
 
-        if( description.trim() <= 1 ){
-            return;
-        }
 
-        const newTodo = {
-            id: new Date().getTime(),
-            desc: description,
-            done: false
-        };
+
+    const handleAddTodo = ( newTodo ) => {
 
         const action = {
             type: 'add',
@@ -71,8 +55,11 @@ export const TodoApp = () => {
         }
 
         dispatch( action );
-        reset();
     }
+
+
+
+
 
     return (
         <div>
@@ -80,14 +67,7 @@ export const TodoApp = () => {
             <hr/>
 
 
-            <form  onSubmit={ handleSubmit } >
-
-                <label for="description" > Ingresa un elemento </label> 
-                <input type="text"  name="description" onChange={ handleInpuntChange }  value={ description }  />
-
-                <button type="submit" className="btn btn-primary mt-1" >Agregar</button>
-
-            </form>
+                <TodoAdd handleAddTodo={ handleAddTodo } />
 
 
             <hr/>
