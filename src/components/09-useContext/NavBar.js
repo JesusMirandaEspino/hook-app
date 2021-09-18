@@ -7,7 +7,7 @@ export const NavBar = () => {
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
         <div className="container-fluid">
             <Link className="navbar-brand" to="/">Use Context</Link>
-            <div clasNames="collapse navbar-collapse" id="navbarNav">
+            <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item"> <NavLink  activeClassName="active" exact className="nav-link" aria-current="page" to="/">Home</NavLink> </li>
                     <li className="nav-item"> <NavLink  activeClassName="active" exact className="nav-link" aria-current="page" to="/about">About</NavLink> </li>
