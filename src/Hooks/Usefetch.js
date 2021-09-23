@@ -29,6 +29,12 @@ export const Usefetch = ( url  ) => {
                 } );
             }
 
+        } ).catch( () => {
+            setEstado({
+                data : null,
+                loading: false,
+                error: 'No se pudo cargar la info'
+            });
         } );
 
     }, [url])
