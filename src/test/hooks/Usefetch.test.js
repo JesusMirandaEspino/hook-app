@@ -33,7 +33,7 @@ describe('Pruebas en useFetch', () => {
 
         const {  result, waitForNextUpdate } = renderHook( () => Usefetch(`https://reqres.in/apid/users?page=2`) );
 
-        await waitForNextUpdate();
+        await waitForNextUpdate({timeout:5000});
 
         const { data, loading, error } =  result.current;
 
