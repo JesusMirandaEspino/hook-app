@@ -27,9 +27,11 @@ export const TodoReducer = ( state = [], action ) => {
                     }
             } );
 
-        default: break;
+        default:  return  state;
 
     }
+
+
 
 
 }
