@@ -48,6 +48,7 @@ describe( 'Pruebas con <TodoAdd />', () => {
             desc: value,
             done: false,
             id: expect.any( Number )
+            
         });
 
         expect( wrappers.find( 'input' ).prop('value') ).toBe('');
