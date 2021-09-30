@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en  <TodoApp /> Debe de mostrarse correctamente 1`] = `
+<div>
+  <h1>
+    Todo App  ( 
+    0
+      ) 
+  </h1>
+  <hr />
+  <TodoAdd
+    handleAddTodo={[Function]}
+  />
+  <hr />
+  <TodoList
+    HandleDelete={[Function]}
+    handleToggle={[Function]}
+    todos={Array []}
+  />
+</div>
+`;
