@@ -7,14 +7,14 @@ import { UserContext } from '../../components/09-useContext/UserContext';
 
 describe( 'Pruebas con <LoginScreen /> ', () => {
 
-    const user = {
-        name: 'Jesus',
-        email: 'jesus@gmail.com'
-    }
+        const setUser  =  jest.fn();
+
 
     const wrapper = mount(
 
-        <UserContext.Provider value={{ user }}>
+        <UserContext.Provider value={{
+            setUser
+        }} >
 
             <LoginScreen />
 
@@ -27,6 +27,17 @@ describe( 'Pruebas con <LoginScreen /> ', () => {
     test( 'Debe de mostrarlo correctamente', () => {
 
         expect(  wrapper ).toMatchSnapshot();
+
+    });
+
+    test( 'Debe de ejecutar el setUser con el argumento esperado', () => {
+
+        wrapper.find( 'button' ).prop( 'onClick' )();
+
+        expect( setUser ).toHaveBeenCalledWith( {
+            id: 123458,
+            name: 'Jesus'
+        });
 
     });
 
