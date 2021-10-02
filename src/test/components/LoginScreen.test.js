@@ -1,12 +1,11 @@
-
 import React from 'react';
 import '@testing-library/jest-dom';
-import {  mount } from 'enzyme';
+import { mount } from 'enzyme';
 
-import { HomeScreen } from '../../components/09-useContext/HomeScreen';
+import { LoginScreen } from '../../components/09-useContext/LoginScreen';
 import { UserContext } from '../../components/09-useContext/UserContext';
 
-describe('Pruebas con <HomeScreen />', () => {
+describe( 'Pruebas con <LoginScreen /> ', () => {
 
     const user = {
         name: 'Jesus',
@@ -17,16 +16,17 @@ describe('Pruebas con <HomeScreen />', () => {
 
         <UserContext.Provider value={{ user }}>
 
-            <HomeScreen />
+            <LoginScreen />
 
         </UserContext.Provider>
         
-    
         );
 
-    test( 'Debe de mostrar el componente correctamente', () => {
 
-        expect( wrapper ).toMatchSnapshot();
+
+    test( 'Debe de mostrarlo correctamente', () => {
+
+        expect(  wrapper ).toMatchSnapshot();
 
     });
 
